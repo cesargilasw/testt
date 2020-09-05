@@ -9,11 +9,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from "@angular/common/http";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 // Angular Material
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { NavbarComponent } from './components/navbar/navbar.component';
+
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 
@@ -25,7 +26,6 @@ import {MatTableModule} from '@angular/material/table';
 
 // FontAwesomeModule
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TableMaterialComponent } from './components/table-material/table-material.component';
 import { UserPanelComponent } from './pages/user-panel/user-panel.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 
@@ -36,7 +36,6 @@ import { CardItemComponent } from './components/card-item/card-item.component';
     AdminPanelComponent,
     HomeComponent,
     NavbarComponent,
-    TableMaterialComponent,
     UserPanelComponent,
     CardItemComponent
   ],

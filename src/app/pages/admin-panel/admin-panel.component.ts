@@ -11,10 +11,10 @@ import { SnackbarService } from 'src/app/services/notifications/snackbar.service
 })
 
 export class AdminPanelComponent implements OnInit {
+    // Componentes de Angular Material - mat-table
   // Data of clients to show on view
   displayedColumns: string[] = ['id', 'name', 'lastName', 'city', 'state'];
   // Clients data to use as datasource on table
-  // Componentes de Angular Material
   clientsData = new MatTableDataSource();
   constructor(private _clientService: ClientService, private snackbarService: SnackbarService) { }
 
