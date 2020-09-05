@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ClientService } from '../../services/client/client.service';
 import { Client } from '../../classes/Client';
@@ -11,7 +11,7 @@ import { SnackbarService } from 'src/app/services/notifications/snackbar.service
 })
 
 export class AdminPanelComponent implements OnInit {
-    // Componentes de Angular Material - mat-table
+  // Componentes de Angular Material - mat-table
   // Data of clients to show on view
   displayedColumns: string[] = ['id', 'name', 'lastName', 'city', 'state'];
   // Clients data to use as datasource on table
