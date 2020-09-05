@@ -1,0 +1,10 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <!-- Uso de structural directives ngFor -->
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 py-3" *ngFor="let item of items">
+                <app-card-item [sourceArray]="item" (clickedCard)="clickEmitter($event)"></app-card-item>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,40 +1,38 @@
-<section class="container login_container">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h2>Welcome</h2>
+<div class="login_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 col-sm-12 col-xs-12">
+                <div class="content w-100">
+                    <div class="login-card">
+                        <div class="col-md-12 text-center mt-3">
+                            <h2 class="title-signin">Sign in to the Test</h2>
+                        </div>
+                        <form [formGroup]="loginForm" (submit)="handleSubmit()">
+                            <div class="my-3">
+                                <input type="text" formControlName="email" name="email" class="form-control input-credentials" placeholder="Email" required maxlength="50"
+                                    [ngClass]="{ 'is-invalid': submitted && formFields.email.errors }">
+                                <div *ngIf="submitted && formFields.email.errors" class="errors">
+                                    <div *ngIf="formFields.email.errors.required">Email is required</div>
+                                    <div *ngIf="formFields.email.errors.email">Wrong email format.</div>
+                                </div>
+                            </div>
+
+                            <div class="my-3">
+                                <input type="password" formControlName="password" name="password" class="form-control input-credentials" placeholder="Password" required
+                                    maxlength="30" [ngClass]="{ 'is-invalid': submitted && formFields.password.errors }">
+                                <div *ngIf="submitted && formFields.password.errors" class="errors">
+                                    <div *ngIf="formFields.password.errors.required">Password is required</div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button *ngIf="!loading" type="submit" class="btn btn-primary btn-login mt-2">Sign In</button>
+                                <mat-progress-spinner class="m-auto" mode="indeterminate" diameter="50" *ngIf="isLoading">
+                                </mat-progress-spinner>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <form [formGroup]="loginForm" (submit)="handleSubmit()">
-
-                <div class="form-group">
-                    <label for="emailInput" class="pl-2">Email</label>
-                    <input type="text" class="form-control" id="emailInput" placeholder="Email.." formControlName="email">
-                    <div *ngIf="submitted && formFields.email.errors" class="errors pt-1">
-                        <div *ngIf="formFields.email.errors.required">Wrong email</div>
-                        <div *ngIf="formFields.email.errors.email">Wrong format.</div>
-                    </div>
-                </div>
-                <div class="form-group mt-4">
-                    <label for="passwordInput" class="pl-2">Password</label>
-                    <input type="password" class="form-control" id="passwordInput" placeholder="Password" formControlName="password">
-                    <div *ngIf="submitted && formFields.password.errors" class="errors pt-1">
-                        <div *ngIf="formFields.password.errors.required">The password is required.</div>
-                    </div>
-                </div>
-
-
-                <div class="row mb-2">
-                    <div class="col-md-6 col-12 offset-md-3">
-                        <button class="btn-success" type="submit" *ngIf="!isLoading" > Login </button>
-                        <mat-progress-spinner class="m-auto" mode="indeterminate" diameter="50" *ngIf="isLoading">
-                        </mat-progress-spinner>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-    </div>
-    
-</section>
+</div>

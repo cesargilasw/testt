@@ -1,0 +1,19 @@
+{
+    "result": [
+      {
+        "id": 1,
+        "username": "admin@mail.com",
+        "role": "Admin",
+        "token": "123456789",
+        "password": "123"
+      },
+      {
+        "id": 2,
+        "username": "user@mail.com",
+        "role": "User",
+        "token": "987654321",
+        "password": "123"
+      }
+    ]
+  }
+

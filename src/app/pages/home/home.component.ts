@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  linkOptions = [
+    //{title: 'Home Page', url:'/', class: ''},
+    {title: 'Login page', url:'/login', class: ''},
+  ]
   constructor() { }
 
   ngOnInit() {

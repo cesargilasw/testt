@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="home_section">
+    <div class="container">
+        <div class="row ">
+            <!-- Uso de structural directives -->
+            <div class="col-12 col-md-4" *ngFor="let option of linkOptions">
+                <div class="alert alert-primary" role="alert">
+                    This is the <span class="alert-link">{{option.title}}</span> -> <a [routerLink]="[option.url]">click here to go!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
