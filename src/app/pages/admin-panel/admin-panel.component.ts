@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ClientService } from '../../services/client/client.service';
-import { Client } from '../../classes/Client';
+//import { Client } from '../../classes/Client';
 import { SnackbarService } from 'src/app/services/notifications/snackbar.service';
 
 @Component({
@@ -24,18 +24,19 @@ export class AdminPanelComponent implements OnInit {
 
   // Call service to get all clients with mock data
   getClients(): void {
-    this.clientsData = new MatTableDataSource([]);
-    let arr: any[] = [];
+    this.clientsData = new MatTableDataSource([]); 
     this._clientService.getAllClients().then(data => {
       if (data['result']) {
         // Map
-        arr = data['result'].map(client => new Client(client));
-        this.clientsData = new MatTableDataSource(arr);
+        this.clientsData = new MatTableDataSource(data['result']);
       }
     }).catch(err => {
       this.snackbarService.showSnackBar('Cerrar', 'Ha ocurrido un error. ⚠️');
-    });
+    }); 
 
+
+
+    
   }
 
 }

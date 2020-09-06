@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { map } from 'rxjs/operators'
+import { Client } from 'src/app/classes/Client';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,11 @@ export class ClientService {
   // Http request to get all clients with mock file
   async getAllClients() {   
     // Mockear una api basica
+    // Pipe
     return new Promise((resolve,reject) => {  
-      this.getJSON('./assets/mocks/clients_mock.json').subscribe((res)=>{
+      this.getJSON('./assets/mocks/clients_mock.json').pipe(
+        map((x) => new Client (x) )
+      ).subscribe((res)=>{
         if (res) {
           resolve(res);
         }
