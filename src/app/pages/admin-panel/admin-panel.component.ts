@@ -27,7 +27,6 @@ export class AdminPanelComponent implements OnInit {
     this.clientsData = new MatTableDataSource([]); 
     this._clientService.getAllClients().then(data => {
       if (data['result']) {
-        // Map
         this.clientsData = new MatTableDataSource(data['result']);
       }
     }).catch(err => {
