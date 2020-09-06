@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { SnackbarService } from 'src/app/services/notifications/snackbar.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
@@ -10,14 +10,14 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  // Property to identify the register form
+  // Property to identify the login form
   loginForm: FormGroup;
   // Property to identify if the form has been already submitted
   submitted = false;
   // Property to identify if a petition is in progress
   isLoading = false;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router, private snackbarService: SnackbarService,
+  constructor(private fb: FormBuilder, private router: Router, private snackbarService: SnackbarService,
     private authenticationService: AuthService) { }
 
   ngOnInit() {

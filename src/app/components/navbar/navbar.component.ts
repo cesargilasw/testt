@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faBell, faUser } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -8,16 +7,15 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  faSearch = faSearch;
-  faBell = faBell;
-  faUser = faUser;
+  // Default the navbar is closed
+  navbarOpen = false;
   constructor(private authenticationService: AuthService) { }
 
   ngOnInit() {
   }
-  navbarOpen = false;
 
-  toggleNavbar() {
+  // Functionality of toggle button on responsive view
+  toggleNavbar(): void {
     this.navbarOpen = !this.navbarOpen;
   }
 

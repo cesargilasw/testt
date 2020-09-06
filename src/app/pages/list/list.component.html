@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<section class="item_list py-5">
+    <div class="container">
+        <form [formGroup]="listForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contacts" formArrayName="list">
+                        <label class="items_title">Item list:</label>
+                        <div class="form-group" *ngFor="let item of listItems.controls;let i = index">
+                            <p class="item_title">Item {{i+1}}: </p>
+                            <input type="text" name="item" [formControlName]="i" class="form-control">
+                            <div *ngIf="submitted && listItems.controls[i].errors?.required" class="errors">Item is required.</div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-info m-2" (click)="newItem()"> New Item </button>
+                    <button type="submit" class="btn btn-info m-2" (click)="validateFields()"> Validate Items </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
