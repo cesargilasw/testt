@@ -1,10 +1,20 @@
-<div class="home_section">
+<div class="home_section pt-5">
     <div class="container">
         <div class="row ">
             <!-- Uso de structural directives -->
-            <div class="col-12 col-md-4" *ngFor="let option of linkOptions">
+            <div class="col-12 col-md-6" *ngFor="let option of linkOptions">
                 <div class="alert alert-primary" role="alert">
                     This is the <span class="alert-link">{{option.title}}</span> -> <a [routerLink]="[option.url]">click here to go!</a>
+                </div>
+                <div class="alert alert-secondary" role="alert">
+                    <b>Credentials of admin user:</b><br>
+                    user: admin@mail.com<br>
+                    psw: 123
+                </div>
+                <div class="alert alert-secondary" role="alert">
+                    <b>Credentials of normal user:</b><br>
+                    user: user@mail.com<br>
+                    psw: 123
                 </div>
             </div>
         </div>
