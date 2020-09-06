@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { Observable, of } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators'
 import { Client } from 'src/app/classes/Client';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class ClientService {
     // Pipe
     return new Promise((resolve,reject) => {  
       this.getJSON('./assets/mocks/clients_mock.json').pipe(
-        map((x) => new Client (x) )
+        map((x: any) => new Client (x) )
       ).subscribe((res)=>{
         if (res) {
           resolve(res);
